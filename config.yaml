@@ -1,7 +1,7 @@
 baseURL: "https://dB2510.github.io/"
 languageCode: "en-us"
 title: "dhruv"
-theme: hugo-profile
+theme: personal-theme
 relativeurls: true
 
 Paginate: 3
