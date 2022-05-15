@@ -75,7 +75,6 @@ header .navbar {
     line-height: 2rem;
     max-width: 100%;
 }
-
 #hero .content {
     animation: fade-left 1s ease-out;
 }
@@ -187,6 +186,8 @@ header .navbar {
 #hero .hero-content > a:hover::after, #hero .hero-content > a:focus::after, #hero .hero-content > a:active::after {
     width: 100%;
 }
+
+
 
 /* about me */
 #about h3 {
