@@ -13,13 +13,13 @@ markup:
     renderer:
       unsafe: true
 
-# Menus:
-#   main:
-#     - identifier: blog
-#       name: Blog
-#       title: Blog posts
-#       url: /blogs
-#       weight: 1
+Menus:
+  main:
+    - identifier: blog
+      name: Blog
+      title: Blog posts
+      url: /blogs
+      weight: 1
 
 params:
   title: "0xdhruv"
@@ -73,8 +73,8 @@ params:
     enable: true
     intro: "Hi, my name is"
     title: "Dhruv Bodani."
-    subtitle: "I build cool stuff for the web3"
-    content: "A passionate full stack engineer. I tend to make use of cutting edge technologies to build and ship products for the decentralised web."
+    subtitle: "Let's BUIDL"
+    content: "A passionate Full Stack Protocol Engineer. I tend to make use of cutting edge technologies to build and ship products for the decentralised web."
     image: /images/pfp.jpeg
     # button:
     #   enable: true
