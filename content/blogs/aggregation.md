@@ -13,6 +13,8 @@ toc:
 
 ### Overview
 
+<em>Special thanks to Abhishek Kumar for feedback and review.</em>
+
 In this article we will see the comparison between **Threshold BLS Signature Aggregation** and just **BLS Signature Aggregation**. First we will see what are exactly each of these and then we will see what are the similarities and differences between each of them.
 
 First let's start with normal BLS Signature Aggregation
@@ -46,11 +48,12 @@ The way SSS works is that it creates a polynomial of degree t-1 over a finite fi
 
 \\[ f(x) = a_0 + a_1x + ... + a_{t-1}x^{t-1}\\]
 
-where \\( a_0 \\) or \\( f(0) \\) is the private key
+where \\( a_0 \\) or \\( f(0) \\) is the private key (k)
 
 The n shares (\\(k_0, k_1, ..., k_{n-1}\\)) of the private key are points on this polynomial such that:
 
 \\[ k_i = f(x_i) \\]
+where \\(x_i\\) is the identifier (i) of the private key share.
 
 The partial signature signed using each share: \\(\sigma_i = H(m)k_i\\). The message m should be same for all partial signatures.
 
@@ -63,12 +66,19 @@ Lagrange Interpolation: According to lagrange interpolation, if we have k+1 data
 \\[ L(x) = \sum_{i=0}^ky_il_i(x) \\]
 \\[ l_i(x) = \prod_{0 \leq m \leq k, m \neq i} \frac{x_m - x}{x_m - x_i} \\]
 
+Note: \\(L(x)\\) is the desired polynomial \\(f(x)\\) which was created at the time splitting of private key into shares, where L(0) is the original private key.
+
 Now we can say that, threshold aggregated signature is:
 
 \\[ \sigma = \sum_{i=0}^{t-1}\sigma_i \prod_{ m = 0 , m \neq i}^{t-1} \frac{x_m}{x_m - x_i} \\]
 
 where RHS is nothing but \\( L(0) \\) with \\(\sigma_i\\) as \\(y_i\\) which is obtained from signing m with private key \\(k_i\\).
-Note: The product part in the above equation is in finite field \\(F_q\\) and summation part is a point of group \\(G_2\\).
+Note: The product part in the above equation is in finite field \\(F_q\\) and summation part is a point of group \\(G_2\\). To get the aggregated signature we don't need to reconstruct the polynomial rather we only need \\(L(0)\\):
+
+\\[ \sigma = \sum_{i=0}^{t-1}H(m)k_i \prod_{ m = 0 , m \neq i}^{t-1} \frac{x_m}{x_m - x_i} \\]
+\\[ \sigma = H(m)\sum_{i=0}^{t-1}k_i \prod_{ m = 0 , m \neq i}^{t-1} \frac{x_m}{x_m - x_i} \\]
+since, \\( k = L(0) = \sum_{i=0}^{t-1}k_i \prod_{ m = 0 , m \neq i}^{t-1} \frac{x_m}{x_m - x_i} \\)
+\\[ \therefore \sigma = H(m)k \\]
 
 ### Conclusion
 
