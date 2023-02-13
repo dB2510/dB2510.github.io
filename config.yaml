@@ -95,7 +95,7 @@ params:
     title: "About Me"
     image: "/images/pfp-circle.png"
     content: |-
-      I am a software engineer with a passion for blockchains and applied cryptography. I have a background in computer science and cryptography, and I have a strong interest in the intersection of technology and economics. I am currently working as a software enigneer at [Obol Labs](https://obol.tech). 
+      I am a software engineer with a passion for blockchains and applied cryptography. I have a background in computer science and cryptography, and I have a strong interest in the intersection of technology and economics. I am currently working as a software engineer at [Obol Labs](https://obol.tech). 
 
       At Obol, we are solving hard problems of applied cryptography and distributed systems to enable Distributed Validator Technology.
     skills:
