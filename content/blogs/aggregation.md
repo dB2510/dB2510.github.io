@@ -23,7 +23,7 @@ First let's start with normal BLS Signature Aggregation
 
 In BLS Signature Aggregation, it aggregates multiple signatures signed using different private keys. Consider signatures as (\\(\sigma_0 , \sigma_1 , ... , \sigma_{n-1}\\)) over group \\(G_2\\), with messages (\\(m_0, m_1, ... , m_{n-1}\\)), then aggregated signature (\\(\sigma\\)) will be:
 
-\\[ \sigma = \sigma_0 + \sigma_0 + ... + \sigma_{n-1} \\]
+\\[ \sigma = \sigma_0 + \sigma_1 + \sigma_2 + ... + \sigma_{n-1} \\]
 \\[ \sigma = \sum_{i=0}^{n-1}\sigma_i \\]
 
 where, "+" represents point addition over group \\(G_2\\) and (\\(\sigma_i = H(m_i)g_2^{sk_i}\\)), where \\(H(m)\\) is a hash of message, \\(sk_i\\) is the ith secret key and \\(g_2\\) is the generator of \\(G_2\\).
